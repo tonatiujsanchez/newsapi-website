@@ -1,1 +1,30 @@
-<p>navbar works!</p>
+<header class="header">
+    <div class="header__container bd-container">
+        <div class="header__content">
+            <div class="header__social">
+                <a href="#" class="header__social__link"><i class='bx bxl-twitter'></i></a>
+                <a href="#" class="header__social__link"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="header__social__link"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="header__heading">
+                <h1 class="header__title">ngnews</h1>
+            </div>
+            <div class="header__form">
+                <div class="header__search">
+                    <input [ngClass]="{'visible': inputVisible}" class="header__search__input" type="text">
+                    <i (click)="inputVisible = !inputVisible" class='bx bx-search header__search__icon'></i>
+                </div>
+                <select (change)="seleccionarPais($event)" class="header__countries">
+                    <option *ngFor="let pais of paises" class="header__country" [value]="pais.code">{{ pais.label }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="nav">
+    <div class="nav__container bd-container">
+        <ul class="nav__list">
+            <li *ngFor="let categoria of categorias" class="nav__item"><a routerLinkActive="active" [routerLink]="[categoria.code]" class="nav__link">{{ categoria.label }}</a></li>
+        </ul>
+    </div>
+</nav>

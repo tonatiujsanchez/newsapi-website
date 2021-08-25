@@ -28,8 +28,8 @@ export class DataService {
   
   categorias:Categoria[] = [
     {
-      code: 'general',
-      label: 'General'
+      code: 'home',
+      label: 'Home'
     },
     {
       code: 'entertainment',
