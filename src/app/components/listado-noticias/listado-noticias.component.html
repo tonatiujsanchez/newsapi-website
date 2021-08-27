@@ -1,0 +1,21 @@
+<section class="articulos">
+    <div class="bd-container">
+        <div class="articulos__container">
+            <div *ngFor="let articulo of articulos | slice:3" class="acticulos__content">
+                <div class="articulos__foto">
+                    <img [src]="articulo.urlToImage | noImage" [alt]="articulo.title">
+                </div>
+                <div class="articulos__desc">
+                    <h3 class="articulos__title">{{ articulo.title }}</h3>
+                    <div class="articulos__data">
+                        <span class="articulos__fecha">{{ articulo.publishedAt | date }}</span>
+                        <span class="articulos__autor">{{ articulo.author | slice:1-20 }}</span>
+                        <span class="articulos__source">{{ articulo.source.name }}</span>
+                    </div>
+                    <p class="articulos__intro">{{ articulo.description }}</p>
+                    <a [href]="articulo.url" target="_blank" class="articulos__ver">Ver más<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

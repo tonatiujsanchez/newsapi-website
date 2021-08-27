@@ -1,0 +1,8 @@
+<div class="spinner-container"  *ngIf="cargando">
+    <app-spinner></app-spinner>
+</div>
+
+<ng-container *ngIf="!cargando" >
+    <app-listado-noticias [articulos]="results" ></app-listado-noticias>
+</ng-container>
+

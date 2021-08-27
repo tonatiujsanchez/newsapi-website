@@ -15,12 +15,15 @@ export class CategoryComponent implements OnInit {
   get articulos(): Article[]{
     return this._noticias.allArticulos;
   }
+  get articulosSlide(): Article[]{
+    return this.articulos.slice(0,3);
+  }
 
   catagorias: Categoria[] = [];
 
   constructor(
     private _data: DataService,
-    private _noticias: NoticiasService, 
+    public _noticias: NoticiasService, 
     private activateRoute: ActivatedRoute,
     private router: Router
   ) {

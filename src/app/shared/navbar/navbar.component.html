@@ -11,7 +11,11 @@
             </div>
             <div class="header__form">
                 <div class="header__search">
-                    <input [ngClass]="{'visible': inputVisible}" class="header__search__input" type="text">
+                    <input  type="text"
+                            (keyup.enter)="buscar()"
+                            [ngClass]="{'visible': inputVisible}" 
+                            class="header__search__input"
+                            #txtBuscar>
                     <i (click)="inputVisible = !inputVisible" class='bx bx-search header__search__icon'></i>
                 </div>
                 <select (change)="seleccionarPais($event)" class="header__countries">

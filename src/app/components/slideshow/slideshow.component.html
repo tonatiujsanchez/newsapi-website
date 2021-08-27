@@ -1,1 +1,25 @@
-<p>slideshow works!</p>
+<swiper
+    [slidesPerView]="1"
+    [spaceBetween]="50"
+    [navigation]="true"
+    [pagination]="{ clickable: true }"
+    [autoplay]="{
+        delay: 3000,
+        disableOnInteraction: false
+    }"
+    [loop]="true">
+
+    <ng-template swiperSlide class="slide" *ngFor="let articulo of articulos">
+        <div class="slide__foto">
+            <img [src]="articulo.urlToImage | noImage" [alt]="articulo.title">
+        </div>
+        <div class="slide__data">
+            <div class="slide__data__content">
+                <span class="slide__source">{{ articulo.source.name }}</span>
+                <h3 class="slide__title">{{ articulo.title }}</h3>
+                <a [href]="articulo.url" class="slide__ver" target="_blank">Ver más</a>
+            </div>
+        </div>
+    </ng-template>
+
+</swiper>
